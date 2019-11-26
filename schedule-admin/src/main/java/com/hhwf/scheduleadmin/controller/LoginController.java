@@ -17,7 +17,7 @@ import java.io.IOException;
  * @Description:
  */
 @Controller("/")
-public class LoginController {
+public class LoginController  extends BaseController {
 
     @RequestMapping("/login")
     public String login() {
