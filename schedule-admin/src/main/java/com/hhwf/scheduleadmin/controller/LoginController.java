@@ -19,7 +19,7 @@ import java.io.IOException;
 @Controller("/")
 public class LoginController {
 
-    @RequestMapping
+    @RequestMapping("/login")
     public String login() {
         return "login";
     }

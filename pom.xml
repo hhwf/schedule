@@ -17,6 +17,7 @@
     <modules>
         <module>schedule-admin</module>
         <module>schedule-core</module>
+        <module>schedule-service</module>
     </modules>
 
 
