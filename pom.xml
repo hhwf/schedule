@@ -22,7 +22,8 @@
 
     <properties>
         <fastjson.version>1.2.61</fastjson.version>
-        <generator.version>3.2.0</generator.version>
+        <generator.version>3.1.2</generator.version>
+        <mysql.connector.version>5.1.42</mysql.connector.version>
     </properties>
 
     <dependencies>
@@ -41,6 +42,17 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
             <version>${generator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.29</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
         </dependency>
     </dependencies>
 
