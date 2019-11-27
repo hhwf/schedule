@@ -1,11 +1,9 @@
-package com.hhwf.scheduleadmin.controller;
+package com.hhwf.schedule.admin.controller;
 
-import com.hhwf.scheduleadmin.common.ImageVerificationCode;
+import com.hhwf.schedule.admin.common.ImageVerificationCode;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

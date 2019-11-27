@@ -22,6 +22,7 @@
 
     <properties>
         <fastjson.version>1.2.61</fastjson.version>
+        <generator.version>3.2.0</generator.version>
     </properties>
 
     <dependencies>
@@ -34,6 +35,12 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>${generator.version}</version>
         </dependency>
     </dependencies>
 

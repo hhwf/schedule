@@ -1,4 +1,4 @@
-package com.hhwf.scheduleadmin.Configuration;
+package com.hhwf.schedule.admin.configuration;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;

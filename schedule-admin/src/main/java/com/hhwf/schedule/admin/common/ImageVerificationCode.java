@@ -1,4 +1,4 @@
-package com.hhwf.scheduleadmin.common;
+package com.hhwf.schedule.admin.common;
 
 import java.awt.Color;
 import java.awt.Font;

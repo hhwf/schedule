@@ -1,4 +1,4 @@
-package com.hhwf.scheduleadmin.controller;
+package com.hhwf.schedule.admin.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
