@@ -2,6 +2,7 @@ package com.hhwf.schedule.admin.dao.mapper;
 
 import com.hhwf.schedule.admin.dao.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Service;
 
 /**
  * <p>

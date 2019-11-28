@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
  * @Description:
  */
 @Configuration
-@MapperScan("com.hhwf.schedule.admin.dao.mapper*")
 public class MybatisPlusConfig {
 
     /**
@@ -21,6 +20,7 @@ public class MybatisPlusConfig {
     public PaginationInterceptor paginationInterceptor() {
         return new PaginationInterceptor();
     }
+
 
 
 }
