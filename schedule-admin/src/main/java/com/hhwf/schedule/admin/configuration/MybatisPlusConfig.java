@@ -1,15 +1,20 @@
 package com.hhwf.schedule.admin.configuration;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.baomidou.mybatisplus.autoconfigure.SpringBootVFS;
+import com.baomidou.mybatisplus.core.MybatisConfiguration;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 
 import javax.sql.DataSource;
+import java.io.IOException;
 
 /**
  * @Auther: fei.wei
@@ -17,7 +22,7 @@ import javax.sql.DataSource;
  * @Description:
  */
 @Configuration
-@MapperScan("com.hhwf.schedule.admin.dao.mapper.mapper*")
+@MapperScan("com.hhwf.schedule.admin.mapper")
 public class MybatisPlusConfig {
 
     @Autowired
@@ -30,8 +35,6 @@ public class MybatisPlusConfig {
     public PaginationInterceptor paginationInterceptor() {
         return new PaginationInterceptor();
     }
-
-
 
 
 }
