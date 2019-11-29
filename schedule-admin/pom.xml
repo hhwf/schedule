@@ -10,7 +10,6 @@
     <artifactId>schedule-admin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>schedule-admin</name>
-    <description>Demo project for Spring Boot</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,6 +33,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+
+
+
         <!-- mybatis-plus begin -->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -49,8 +51,11 @@
         <dependency>
             <groupId>com.hhwf</groupId>
             <artifactId>schedule-service</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${parent.version}</version>
         </dependency>
+
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
