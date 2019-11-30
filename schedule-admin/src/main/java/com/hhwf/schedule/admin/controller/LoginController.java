@@ -1,10 +1,15 @@
 package com.hhwf.schedule.admin.controller;
 
-import com.hhwf.schedule.admin.common.ImageVerificationCode;
+import com.hhwf.schedule.admin.common.model.ImageVerificationCode;
+import com.hhwf.schedule.admin.common.utils.MD5Utils;
+import com.hhwf.schedule.admin.entity.User;
+import com.hhwf.vo.Result;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.*;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,13 +24,38 @@ import java.io.IOException;
 @Controller
 public class LoginController extends BaseController {
 
-    @GetMapping("/")
-    public String login(HttpServletRequest httpServletRequest) {
+    @GetMapping("/login")
+    public String login() {
         return "login";
     }
 
+    @PostMapping("/login")
+    @ResponseBody
+    public Result login(String username, String password) {
+        password = MD5Utils.encrypt(username, password);
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+        Subject subject = SecurityUtils.getSubject();
+        try {
+            subject.login(token);
+            return Result.ok();
+        } catch (UnknownAccountException | IncorrectCredentialsException | LockedAccountException e) {
+            return Result.error(e.getMessage());
+        } catch (AuthenticationException e) {
+            return Result.error("认证失败！");
+        }
+    }
 
+    @RequestMapping("/")
+    public String redirectIndex() {
+        return "redirect:/index";
+    }
 
+    @RequestMapping("/index")
+    public String index(Model model) {
+        User user = (User) SecurityUtils.getSubject().getPrincipal();
+        model.addAttribute("user", user);
+        return "index";
+    }
 
 
     /**
