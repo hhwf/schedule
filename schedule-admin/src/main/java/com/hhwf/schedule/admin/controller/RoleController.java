@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller;
  * @since 2019-11-30
  */
 @Controller
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/role")
+public class RoleController {
 
 }

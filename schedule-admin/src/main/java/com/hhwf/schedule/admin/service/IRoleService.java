@@ -1,6 +1,6 @@
 package com.hhwf.schedule.admin.service;
 
-import com.hhwf.schedule.admin.entity.User;
+import com.hhwf.schedule.admin.entity.Role;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author hhwf
  * @since 2019-11-30
  */
-public interface IUserService extends IService<User> {
+public interface IRoleService extends IService<Role> {
 
 }

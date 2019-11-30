@@ -1,6 +1,6 @@
 package com.hhwf.schedule.admin.mapper;
 
-import com.hhwf.schedule.admin.entity.User;
+import com.hhwf.schedule.admin.entity.UserRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author hhwf
  * @since 2019-11-30
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserRoleMapper extends BaseMapper<UserRole> {
 
 }

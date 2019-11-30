@@ -1,8 +1,8 @@
 package com.hhwf.schedule.admin.service.impl;
 
-import com.hhwf.schedule.admin.entity.User;
-import com.hhwf.schedule.admin.mapper.UserMapper;
-import com.hhwf.schedule.admin.service.IUserService;
+import com.hhwf.schedule.admin.entity.Role;
+import com.hhwf.schedule.admin.mapper.RoleMapper;
+import com.hhwf.schedule.admin.service.IRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-11-30
  */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IRoleService {
 
 }

@@ -47,7 +47,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
-            <version>3.0.6</version>
+            <version>3.2.0</version>
             <scope>compile</scope>
         </dependency>
         <!-- 模板引擎 -->

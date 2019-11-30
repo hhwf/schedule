@@ -14,27 +14,25 @@ import java.io.Serializable;
  * @author hhwf
  * @since 2019-11-30
  */
-public class User extends Model<User> {
+public class UserRole extends Model<UserRole> {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * id
+     */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
-     * 用户名
+     * 用户ID
      */
-    private String userName;
+    private Long userId;
 
     /**
-     * 密码
+     * 角色ID
      */
-    private String password;
-
-    /**
-     * 头像
-     */
-    private String faceUrl;
+    private Long roleId;
 
     /**
      * 创建时间
@@ -53,26 +51,19 @@ public class User extends Model<User> {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getUserName() {
-        return userName;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    public String getFaceUrl() {
-        return faceUrl;
+    public Long getRoleId() {
+        return roleId;
     }
 
-    public void setFaceUrl(String faceUrl) {
-        this.faceUrl = faceUrl;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
     public LocalDateTime getCreateTime() {
         return createTime;
@@ -96,11 +87,10 @@ public class User extends Model<User> {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserRole{" +
             "id=" + id +
-            ", userName=" + userName +
-            ", password=" + password +
-            ", faceUrl=" + faceUrl +
+            ", userId=" + userId +
+            ", roleId=" + roleId +
             ", createTime=" + createTime +
             ", updateTime=" + updateTime +
         "}";

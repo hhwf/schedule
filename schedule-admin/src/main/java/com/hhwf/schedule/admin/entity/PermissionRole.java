@@ -14,27 +14,25 @@ import java.io.Serializable;
  * @author hhwf
  * @since 2019-11-30
  */
-public class User extends Model<User> {
+public class PermissionRole extends Model<PermissionRole> {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * ID
+     */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
-     * 用户名
+     * 角色ID
      */
-    private String userName;
+    private Long roleId;
 
     /**
-     * 密码
+     * 权限ID
      */
-    private String password;
-
-    /**
-     * 头像
-     */
-    private String faceUrl;
+    private Long permissionId;
 
     /**
      * 创建时间
@@ -53,26 +51,19 @@ public class User extends Model<User> {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getUserName() {
-        return userName;
+    public Long getRoleId() {
+        return roleId;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    public String getFaceUrl() {
-        return faceUrl;
+    public Long getPermissionId() {
+        return permissionId;
     }
 
-    public void setFaceUrl(String faceUrl) {
-        this.faceUrl = faceUrl;
+    public void setPermissionId(Long permissionId) {
+        this.permissionId = permissionId;
     }
     public LocalDateTime getCreateTime() {
         return createTime;
@@ -96,11 +87,10 @@ public class User extends Model<User> {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "PermissionRole{" +
             "id=" + id +
-            ", userName=" + userName +
-            ", password=" + password +
-            ", faceUrl=" + faceUrl +
+            ", roleId=" + roleId +
+            ", permissionId=" + permissionId +
             ", createTime=" + createTime +
             ", updateTime=" + updateTime +
         "}";
