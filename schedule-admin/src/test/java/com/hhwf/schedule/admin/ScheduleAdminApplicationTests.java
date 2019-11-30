@@ -1,13 +1,18 @@
 package com.hhwf.schedule.admin;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
-class ScheduleAdminApplicationTests {
+@RunWith(SpringRunner.class)
+public class ScheduleAdminApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
+        System.out.println(111);
+
     }
 
 }
