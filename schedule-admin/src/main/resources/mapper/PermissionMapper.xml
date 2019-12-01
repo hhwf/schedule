@@ -4,9 +4,11 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.hhwf.schedule.admin.entity.Permission">
-        <id column="pid" property="pid" />
-        <result column="name" property="name" />
-        <result column="url" property="url" />
+        <id column="id" property="id" />
+        <result column="permission_name" property="permissionName" />
+        <result column="permission_url" property="permissionUrl" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
     </resultMap>
 
 </mapper>
