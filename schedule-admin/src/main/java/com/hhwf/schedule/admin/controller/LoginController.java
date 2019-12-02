@@ -2,6 +2,7 @@ package com.hhwf.schedule.admin.controller;
 
 import com.hhwf.schedule.admin.common.model.ImageVerificationCode;
 import com.hhwf.schedule.admin.common.utils.MD5Utils;
+import com.hhwf.schedule.admin.controller.vo.LoginVO;
 import com.hhwf.schedule.admin.entity.User;
 import com.hhwf.vo.Result;
 import org.apache.shiro.SecurityUtils;
@@ -31,29 +32,27 @@ public class LoginController extends BaseController {
 
     @PostMapping("/login")
     @ResponseBody
-    public Result login(String username, String password) {
-        password = MD5Utils.encrypt(username, password);
-        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+    public Result login(@RequestBody LoginVO loginVO) {
+        String password = MD5Utils.encrypt(loginVO.getUserName(), loginVO.getPassword());
+        UsernamePasswordToken token = new UsernamePasswordToken(loginVO.getUserName(), password);
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(token);
             return Result.ok();
         } catch (UnknownAccountException | IncorrectCredentialsException | LockedAccountException e) {
-            return Result.error(e.getMessage());
+            return Result.error("请输入正确的用户名和密码");
         } catch (AuthenticationException e) {
             return Result.error("认证失败！");
         }
     }
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String redirectIndex() {
         return "redirect:/index";
     }
 
     @RequestMapping("/index")
-    public String index(Model model) {
-        User user = (User) SecurityUtils.getSubject().getPrincipal();
-        model.addAttribute("user", user);
+    public String index() {
         return "index";
     }
 

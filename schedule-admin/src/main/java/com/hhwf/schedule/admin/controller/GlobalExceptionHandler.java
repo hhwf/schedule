@@ -17,10 +17,9 @@ public class GlobalExceptionHandler {
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
 
-    @ExceptionHandler
+    @ExceptionHandler(Exception.class)
     public Result unknownException(Exception e) {
         log.error("发生了未知异常", e);
-        // 发送邮件通知技术人员.
         return Result.error(-1, "系统错误");
     }
 
