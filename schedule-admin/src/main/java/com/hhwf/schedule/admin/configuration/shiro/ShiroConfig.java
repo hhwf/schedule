@@ -1,4 +1,4 @@
-package com.hhwf.schedule.admin.configuration;
+package com.hhwf.schedule.admin.configuration.shiro;
 
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -49,6 +49,11 @@ public class ShiroConfig {
     public ShiroRealm customRealm() {
         ShiroRealm shiroRealm = new ShiroRealm();
         return shiroRealm;
+    }
+
+    @Bean("sessionListener")
+    public ShiroSessionListener shiroSessionListener() {
+        return new ShiroSessionListener();
     }
 
 }

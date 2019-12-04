@@ -48,6 +48,9 @@ public class LoginController extends BaseController {
 
     @GetMapping("/")
     public String redirectIndex() {
+        Subject subject = SecurityUtils.getSubject() ;
+        User user = (User)subject.getPrincipal();
+        System.out.println(user.toString());
         return "redirect:/index";
     }
 

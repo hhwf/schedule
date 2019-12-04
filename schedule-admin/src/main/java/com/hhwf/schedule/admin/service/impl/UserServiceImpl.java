@@ -34,4 +34,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         User user = baseMapper.selectOne(queryWrapper);
         return user;
     }
+
+    @Override
+    public User findByName(String userName) {
+        Map<String, String> map = new HashMap<>();
+        map.put("user_name", userName);
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.allEq(map);
+        User user = baseMapper.selectOne(queryWrapper);
+        return user;
+    }
 }

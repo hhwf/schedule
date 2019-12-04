@@ -1,4 +1,4 @@
-package com.hhwf.schedule.admin.configuration;
+package com.hhwf.schedule.admin.configuration.shiro;
 
 import com.hhwf.schedule.admin.entity.User;
 import com.hhwf.schedule.admin.service.IUserService;
@@ -41,7 +41,7 @@ public class ShiroRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String userName = (String) authenticationToken.getPrincipal();
         String password = new String((char[]) authenticationToken.getCredentials());
-        User user = userService.findByNameAndPassword(userName, password);
+        User user = userService.findByName(userName);
         if (user != null) {
             SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(userName, password.toCharArray(), getName());
             return info;
