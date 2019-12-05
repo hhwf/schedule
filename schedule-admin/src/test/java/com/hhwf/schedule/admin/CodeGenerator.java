@@ -30,7 +30,7 @@ public class CodeGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         gc.setAuthor("hhwf");
-        gc.setOutputDir("F:\\learn\\schedule\\schedule-admin\\src\\main\\java");
+        gc.setOutputDir("D:\\myProjects\\schedule\\schedule-admin\\src\\main\\java");
         gc.setFileOverride(false);// 是否覆盖同名文件，默认是false
         gc.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
         gc.setEnableCache(false);// XML 二级缓存
@@ -51,7 +51,7 @@ public class CodeGenerator {
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        strategy.setInclude("user","role","user_role","permission","permission_role"); // 需要生成的表
+        strategy.setInclude("user","role","author","menu","user_role"); // 需要生成的表
         // strategy.setExclude(new String[]{"test"}); // 排除生成的表
         // 自定义实体父类
         // strategy.setSuperEntityClass("com.baomidou.demo.TestEntity");

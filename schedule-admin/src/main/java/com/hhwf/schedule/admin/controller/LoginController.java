@@ -38,7 +38,7 @@ public class LoginController extends BaseController {
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(token);
-            return Result.ok();
+            return Result.ok("index");
         } catch (UnknownAccountException | IncorrectCredentialsException | LockedAccountException e) {
             return Result.error("请输入正确的用户名和密码");
         } catch (AuthenticationException e) {
@@ -48,9 +48,6 @@ public class LoginController extends BaseController {
 
     @GetMapping("/")
     public String redirectIndex() {
-        Subject subject = SecurityUtils.getSubject() ;
-        User user = (User)subject.getPrincipal();
-        System.out.println(user.toString());
         return "redirect:/index";
     }
 

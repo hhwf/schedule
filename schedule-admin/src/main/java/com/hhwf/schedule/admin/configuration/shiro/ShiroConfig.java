@@ -32,6 +32,8 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/logout", "logout");
         filterChainDefinitionMap.put("/login", "anon");
         filterChainDefinitionMap.put("/", "anon");
+
+        //授权过滤器
         filterChainDefinitionMap.put("/**", "authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
@@ -51,7 +53,7 @@ public class ShiroConfig {
         return shiroRealm;
     }
 
-    @Bean("sessionListener")
+    //@Bean("sessionListener")
     public ShiroSessionListener shiroSessionListener() {
         return new ShiroSessionListener();
     }

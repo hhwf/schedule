@@ -1,6 +1,5 @@
 package com.hhwf.schedule.admin;
 
-import com.hhwf.schedule.admin.service.IUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +10,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 public class ScheduleAdminApplicationTests {
 
-    @Autowired
-    private IUserService userService;
 
     @Test
     public void contextLoads() {
-        userService.findByNameAndPassword("admin","admin");
+
 
     }
 

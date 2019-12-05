@@ -52,7 +52,7 @@ public class Result<T> implements Serializable {
     }
 
 
-    public static Result<Object> ok(Object t) {
+    public static <T> Result<T> ok(T t) {
         return new Result(t);
     }
 
